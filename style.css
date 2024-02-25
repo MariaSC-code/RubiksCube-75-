@@ -1,0 +1,121 @@
+/* Apply box-sizing to all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Container for the Rubik's Cube */
+#container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+/* Area for the cube faces */
+.box-area {
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 3s linear infinite;
+}
+
+/* Keyframes for cube Rotation/Animation */
+@keyframes rotate {
+  100% {
+    transform: rotate3d(1, 1, 0, 0);
+  }
+  0% {
+    transform: rotate3d(1, 1, 0, 360deg);
+  }
+}
+
+/* Styling for each face of the Rubik's Cube */
+.box {
+  position: absolute;
+  width: 150px; 
+  height: 150px; 
+  border: 1px solid #262626;
+}
+
+/* Styling for grid container */
+.grid-container {
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    'one two three'; /* Define grid areas */
+  grid-gap: 1.2px;
+  padding: 0px;
+}
+
+/* Styling for each grid item */
+.grid-container > div {
+  border: 1.5px solid #090714; 
+  border-radius: 2px; 
+  text-align: center;
+  padding: 0;
+  font-size: 12px; 
+}
+
+/* POSITION OF EACH FACE OF THE CUBE */
+
+/* BACK Face */
+#box-back {
+  transform: translateX(-75px) translateY(-75px) translateZ(-75px); 
+}
+
+/* FRONT Face */
+#box-front {
+  transform: translateX(-75px) translateY(-75px) translateZ(75px); 
+}
+
+/* RIGHT Face */
+#box-right {
+  transform: translateY(-75px) rotateY(90deg); 
+}
+
+/* LEFT Face */
+#box-left {
+  transform: translateY(-75px) translateX(-150px) rotateY(90deg);
+}
+
+/* TOP Face */
+#box-top {
+  transform: translateX(-75px) translateY(-150px) rotateX(90deg);
+} 
+
+/* BOTTOM Face */
+#box-bottom {
+  transform: translateX(-75px) rotateX(90deg); 
+}
+
+/* BACKGROUND COLOURS for each face */
+
+/* Front face background */
+.bg-front {
+  background: #fff;
+}
+
+/* Back face background */
+.bg-back {
+  background: yellow;
+}
+
+/* Right face background */
+.bg-right {
+  background: rgb(75, 255, 4);
+}
+
+/* Left face background */
+.bg-left {
+  background: rgb(36, 184, 248);
+}
+
+/* Top face background */
+.bg-top {
+  background: #d40845;
+}
+
+/* Bottom face background */
+.bg-bottom {
+  background: rgb(235, 1, 145);
+}
